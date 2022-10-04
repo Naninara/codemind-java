@@ -1,53 +1,47 @@
 import java.util.Scanner;
-class Sample
+class root
 {
-    public static boolean prime(int n)
-    {
-        int count=0;
-        if(n<2)
+    public static boolean prime(int n){
+        if(n==1)
         return false;
-        for(int i=2;i<=Math.sqrt(n);i++)
-        {
-            if(n%i==0)
-                count++;
+        int cnt =0;
+        for(int i=2;i<=(int)Math.sqrt(n);i++){
+            if((n%i)==0)
+                cnt++;
         }
-        if(count==0){
-            return true;
-        }
+        if(cnt==0)
+        return true;
         else
         return false;
     }
-    public static boolean pali(int n)
-    {
-        //palindrome logic write here.
-        int sum=0,r,temp=n;
-        while(n>0)
-        {
-            r=n%10;
-            sum=sum*10+r;
-            n=n/10;
+    public static boolean pali(int n){
+        int rev=0;
+       int temp=n;
+        while(n>0){
+            int r = n%10;
+            rev = rev*10+r;
+            n = n/10;
         }
-        if(sum==temp)
-            return true;
+        if(rev==temp)
+        return true;
         else
-            return false;
-        
+        return false;
     }
-    public static void main(String args[])
-    {
-        Scanner sc=new Scanner(System.in);
-        int n;
-        n=sc.nextInt();
-        for(int i=n+1;;i++)
-        {
-            if(pali(i)&&prime(i))
-            {
-                System.out.print(i);
-                break;
-            }
-        }
-        
-        
-        
-    }
+	public static void main(String args[])
+	{
+		int n,a,b;
+		Scanner sc= new Scanner(System.in);
+		n= sc.nextInt();
+		for(int i=n+1;;i++){
+		    if(pali(i) && prime(i)){
+		        a = i;
+		        break;
+		        
+		    }
+		}
+		
+		System.out.print(a);
+		
+		}
+	
 }
