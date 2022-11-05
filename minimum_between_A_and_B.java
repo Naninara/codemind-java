@@ -1,44 +1,34 @@
-import java.util.Scanner;
-class Odd
-{
-    public static void main(String args[])
-    {
-        int y=0,c=0,d=0;
-        int a[]=new int[20];
-        int b[]=new int[20];
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int[] arr=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            arr[i]=sc.nextInt();
-        }
-        int A=sc.nextInt();
-        int B=sc.nextInt();
-        for(int i=0;i<n;i++)
-        {
-           if(arr[i]>=A &&arr[i]<=B)
-           {
-               y=1;
-               a[c]=arr[i];
-               c++;
-           }
-        }
-        if(y==0)
-        {
-            System.out.print("-1");
-        }
-        else
-        {
-        int max=a[0];
-        for(int i=0;i<c;i++)
-        {
-            if(a[i]<=max)
-            {
-                max=a[i];
-            }
-        }
-        System.out.print(max);
-        }
-    }
+//package numbers;
+import java.util.*;
+ class MinimumBwAandB {
+
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int n= sc.nextInt();
+	int x[]= new int[n];
+	for(int i=0;i<n;i++) {
+		x[i]=sc.nextInt();
+	}
+	int a = sc.nextInt();
+	int b = sc.nextInt();
+	int c=0;
+	int y=0;
+	for(int i=0;i<n;i++)
+		if(x[i]>=a && x[i]<=b ) {
+			x[c]=x[i];
+			c++;
+			y=1;
+		}
+	if(y==0){
+		System.out.print("-1");
+	}
+	else {
+		int min=x[0];
+		for(int i=0;i<c;i++) {
+			min =Math.min(min, x[i]);
+		}
+	System.out.print(min);
+	}
+
+}
 }
