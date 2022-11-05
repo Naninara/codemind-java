@@ -1,48 +1,46 @@
-import java.util.Scanner;
-class Minimum
-{
-    public static void main(String args[])
-    {
-        int n,count=0,countt=0,sum=0,y=0;
-        float avrg;
-        Scanner sc=new Scanner(System.in);
-        n=sc.nextInt();
-        int[] arr=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            arr[i]=sc.nextInt();
-        }
-        for(int i=0;i<n;i++)
-        {
-           count=1;
-           if(arr[i]==-1)
-           {
-               continue;
-           }
-           for(int j=i+1;j<n;j++)
-           {
-               if(arr[i]==arr[j])
-               {
-                   count++;
-                   arr[j]=-1;
-               }
-           }
-           if(arr[i]==count)
-           {
-               y=1;
-               sum=sum+arr[i];
-               countt++;
-           }
-        }
-        if(y==0)
-        {
-            System.out.println("-1");
-        }
-        else
-        {
-            avrg=(float)sum/countt;
-            System.out.format("%.2f",avrg);
-        }
-        sc.close();
-    }
+//package numbers;
+import java.util.*;
+ class MInimumandMax {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n= sc.nextInt();
+		int x[]= new int[n];
+		for(int i=0;i<n;i++) {
+			x[i]=sc.nextInt();
+		}
+		int c=0;
+		int y=0;
+		for(int i=0;i<n;i++) {
+			if(x[i]==-1) {
+				continue;
+			}
+			int count=1;
+			for(int j=i+1;j<n;j++) {
+				if(x[i]==x[j]) {
+					x[j]=-1;
+					count++;
+				}
+			}
+			if(count==x[i]) {
+				x[c]=count;
+				c++;
+				y=1;
+			}
+			
+		}
+		if(y==0) {
+			System.out.print(-1);
+		}
+		else {
+			float sum=0;
+			int cnt=0;
+			for(int i=0;i<c;i++) {
+				sum = sum+x[i];
+				cnt++;
+			}
+		System.out.format("%.2f",(sum/cnt));	
+		}
+
+	}
+
 }
