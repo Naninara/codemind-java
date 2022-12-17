@@ -1,37 +1,29 @@
-import java.util.*;
-class array3 {
-    public static boolean pali(int n)
-   
+import java.util.Scanner;
+class sample{
+    public static int pali(int x)
     {
-        int temp=n;
-         int rev=0;
-        while(n>0){
-            int r=n%10;
-            rev=rev*10+r;
-            n=n/10;
+        int rev=0;
+        while(x>0)
+        {
+            int r = x%10;
+            rev = rev*10+r;
+            x = x/10;
         }
-        if(rev==temp)
-        return true;
-        else
-        return false;
+        return rev;
     }
-    public static void main(String[] args) {
-   Scanner sc = new Scanner(System.in); 
-   int x[],n,m,cnt=0;
-   n = sc.nextInt();
-
-   x =new int[n];
-   for( int i=0;i<n;i++)
-   {
-    x[i]=sc.nextInt();
-
-   }
-   
-    for( int i=0;i<n;i++)
+    public static void main(String args[])
     {
-     if(pali(x[i]))
-        cnt++;
+        Scanner sc= new Scanner(System.in);
+        int n,result,cnt=0;
+        n = sc.nextInt();
+        int x[] = new int[n];
+        for(int i=0;i<n;i++){
+            x[i]= sc.nextInt();
+        }
+        for(int ele : x){
+        if(pali(ele)==ele)
+           cnt++;
     }
-    System.out.print(cnt);
+     System.out.print(cnt);
 }
 }
